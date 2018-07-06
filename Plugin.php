@@ -13,6 +13,21 @@ use Backend\Models\BrandSetting;
 class Plugin extends PluginBase
 {
     /**
+     * Returns information about this plugin.
+     *
+     * @return array
+     */
+    public function pluginDetails()
+    {
+        return [
+            'name'        => 'EssentialVars',
+            'description' => 'Adds the app_[url|logo|name|debug|description] variables to Mail & CMS templates',
+            'author'      => 'Luke Towers',
+            'icon'        => 'icon-code',
+        ];
+    }
+
+    /**
      * Boot method, called right before the request route.
      *
      * @return array
