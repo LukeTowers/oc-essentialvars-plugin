@@ -1,2 +1,3 @@
 1.0.1: 'Initial version, app_[url|logo|name|debug|description]'
 1.0.2: 'Added plugin information'
+1.0.3: 'Fixed race condition that caused system module translations to break'
