@@ -1,7 +1,7 @@
 {
     "name": "luketowers/oc-essentialvars-plugin",
     "type": "october-plugin",
-    "description": "Adds the app_[url|logo|name|debug|description] variables to Mail & CMS templates in OctoberCMS",
+    "description": "Adds the app_[url|logo|favicon|name|debug|description] variables to Mail & CMS templates in OctoberCMS",
     "homepage": "https://github.com/LukeTowers/oc-essentialvars-plugin",
     "keywords": ["october", "octobercms", "twig", "mail"],
     "license": "MIT",

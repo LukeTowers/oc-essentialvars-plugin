@@ -2,3 +2,4 @@
 1.0.2: 'Added plugin information'
 1.0.3: 'Fixed race condition that caused system module translations to break'
 1.0.4: 'Retrieve variables only when necessary'
+1.0.5: 'Added app_favicon'
