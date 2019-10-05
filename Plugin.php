@@ -53,7 +53,7 @@ class Plugin extends PluginBase
                 View::share('app_name', $appVars['name']);
                 View::share('app_debug', $appVars['debug']);
                 View::share('app_description', $appVars['description']);
-            });
+            }, 5);
 
 
             // Share the variables with the CMS template system

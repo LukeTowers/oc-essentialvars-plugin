@@ -3,3 +3,4 @@
 1.0.3: 'Fixed race condition that caused system module translations to break'
 1.0.4: 'Retrieve variables only when necessary'
 1.0.5: 'Added app_favicon'
+1.0.6: "Fixed bug where the variables wouldn't be available to Mail templates"
