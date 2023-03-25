@@ -15,10 +15,8 @@ class Plugin extends PluginBase
 {
     /**
      * Returns information about this plugin.
-     *
-     * @return array
      */
-    public function pluginDetails()
+    public function pluginDetails(): array
     {
         return [
             'name'        => 'EssentialVars',
@@ -29,11 +27,9 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Boot method, called right before the request route.
-     *
-     * @return array
+     * Called when the plugin boots
      */
-    public function boot()
+    public function boot(): void
     {
         App::before(function () {
             // Share the variables with the mail template system
@@ -43,6 +39,7 @@ class Plugin extends PluginBase
                     'logo'        => BrandSetting::getLogo() ?: url('/modules/backend/assets/images/october-logo.svg'),
                     'favicon'     => BrandSetting::getFavicon() ?: url('/modules/backend/assets/images/favicon.png'),
                     'name'        => BrandSetting::get('app_name'),
+                    'tagline'     => BrandSetting::get('app_tagline'),
                     'debug'       => Config::get('app.debug', false),
                     'description' => BrandSetting::get('app_tagline'),
                 ];
@@ -51,6 +48,7 @@ class Plugin extends PluginBase
                 View::share('app_logo', $appVars['logo']);
                 View::share('app_favicon', $appVars['favicon']);
                 View::share('app_name', $appVars['name']);
+                View::share('app_tagline', $appVars['tagline']);
                 View::share('app_debug', $appVars['debug']);
                 View::share('app_description', $appVars['description']);
             }, 5);
@@ -63,6 +61,7 @@ class Plugin extends PluginBase
                     'logo'        => BrandSetting::getLogo() ?: url('/modules/backend/assets/images/october-logo.svg'),
                     'favicon'     => BrandSetting::getFavicon() ?: url('/modules/backend/assets/images/favicon.png'),
                     'name'        => BrandSetting::get('app_name'),
+                    'tagline'     => BrandSetting::get('app_tagline'),
                     'debug'       => Config::get('app.debug', false),
                     'description' => BrandSetting::get('app_tagline'),
                 ];
@@ -71,6 +70,7 @@ class Plugin extends PluginBase
                 $controller->vars['app_logo']        = $appVars['logo'];
                 $controller->vars['app_favicon']     = $appVars['favicon'];
                 $controller->vars['app_name']        = $appVars['name'];
+                $controller->vars['app_tagline']     = $appVars['tagline'];
                 $controller->vars['app_debug']       = $appVars['debug'];
                 $controller->vars['app_description'] = $appVars['description'];
             });
